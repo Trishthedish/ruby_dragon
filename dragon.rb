@@ -1,8 +1,9 @@
 class Dragon
 
+
+# ------------- Initialized Method -------------#
   def initialize(name, color)
 # We need to figure out how much these values start at. Thus, we first create
-
     @food_in_belly = 100
     @food_in_intestine = 0
     @awake = true
@@ -14,6 +15,8 @@ class Dragon
     end
   end
 
+
+# ------------- feed Method -------------#
   # amount = 10 making it default.
   def feed(amount = 10)
     #plus equals because you're eating.
@@ -26,11 +29,7 @@ class Dragon
     end
     time_passed
   end
-
-#_____________________________________
-
-
-
+# ------------- walk Method -------------#
   def walk
     if @awake != true
       puts "You wake #{@name}"
@@ -51,19 +50,14 @@ class Dragon
       end
   end
 
-
-
-
-
-
-
-
+# ------------- nap Method -------------#
   def nap
     @awake = false
     puts "#{@name} takes a nap!! "
     time_passed
   end
 
+  # ------------- play Method -------------#
   def play
     wake
     puts "You play toss with #{@name}."
@@ -71,6 +65,7 @@ class Dragon
     time_passed
   end
 
+  # ------------- wake Method -------------#
   def wake
     if @awake
       return
@@ -80,6 +75,7 @@ class Dragon
     end
   end
 
+  # ------------- specialty Method -------------#
   def specialty
     wake
     case @color
@@ -97,11 +93,7 @@ class Dragon
     end
   end
 
-#______________________________________
-
-
-#______________________________________
-# new method, called timePAssed
+# ------------- time_passed Method -------------#
   private
   def time_passed
     @food_in_belly -= 10
